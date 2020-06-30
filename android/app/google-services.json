@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "400629389852",
+    "firebase_url": "https://nyob-42a1d.firebaseio.com",
+    "project_id": "nyob-42a1d",
+    "storage_bucket": "nyob-42a1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400629389852:android:a8a86090154370998a1dd9",
+        "android_client_info": {
+          "package_name": "com.example.NYOB"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400629389852-6mohc8hrsid44jg4fu0ni765cu9deh08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3blLka-sL9tyZgCRcVwxPWDglYXn1xJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400629389852-6mohc8hrsid44jg4fu0ni765cu9deh08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
