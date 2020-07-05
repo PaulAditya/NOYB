@@ -1,5 +1,5 @@
 import 'package:NYOB/src/chatPage.dart';
-import 'package:NYOB/src/loginPage.dart';
+import 'package:NYOB/src/homePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
