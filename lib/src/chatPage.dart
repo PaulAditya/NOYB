@@ -61,7 +61,15 @@ class _ChatPageState extends State<ChatPage> {
                 children: <Widget>[
                   Expanded(
                     child: Container(
+                      padding: EdgeInsets.all(20),
                       child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(90))),
+                        ),
                         controller: messageController,
                       ),
                     ),
@@ -70,8 +78,7 @@ class _ChatPageState extends State<ChatPage> {
                     child: IconButton(
                       icon: Icon(Icons.send),
                       onPressed: () async {
-                        print(widget.user.email);
-                        if (messageController.text.length > 0){
+                        if (messageController.text.trim().length > 0) {
                           await _firestore.collection("messages").add({
                             "text": messageController.text,
                             "from": widget.user.displayName,
@@ -80,7 +87,7 @@ class _ChatPageState extends State<ChatPage> {
                           messageController.clear();
                           scrollController.animateTo(
                               scrollController.position.maxScrollExtent,
-                              duration: Duration(milliseconds: 100),
+                              duration: Duration(milliseconds: 900),
                               curve: Curves.easeOutBack);
                         }
                       },
