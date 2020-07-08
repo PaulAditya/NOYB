@@ -24,8 +24,8 @@ class Message extends StatelessWidget {
         children: <Widget>[
           Text(from),
           Material(
-            color: me ? Colors.indigo[900] : Colors.blue[200],
-            borderRadius: BorderRadius.circular(5),
+            color: me ? Colors.deepPurple[300] : Colors.limeAccent[200],
+            borderRadius: BorderRadius.circular(13),
             child: Container(
               child: Text(
                 message,
