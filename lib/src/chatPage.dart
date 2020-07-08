@@ -58,13 +58,18 @@ class _ChatPageState extends State<ChatPage> {
             //Text Field
             Container(
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      height: 80,
+                      padding: EdgeInsets.all(12),
                       child: TextField(
+                        textAlignVertical: TextAlignVertical.center,
                         decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(8),
                           filled: true,
+                          hintText: "Yahan likh chodu",
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -75,6 +80,7 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.only(right: 5),
                     child: IconButton(
                       icon: Icon(Icons.send),
                       onPressed: () async {
