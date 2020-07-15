@@ -15,11 +15,12 @@ class _ChatPageState extends State<ChatPage> {
   final Firestore _firestore = Firestore.instance;
   TextEditingController messageController = TextEditingController();
   ScrollController scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CHAT"),
+        title: Text("LET'S TALK"),
       ),
       body: SafeArea(
         child: Column(
@@ -27,6 +28,8 @@ class _ChatPageState extends State<ChatPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
+                child: Container(
+              color: Color(0xFFFAFAFA),
               child: StreamBuilder<QuerySnapshot>(
                 stream: _firestore.collection("messages").snapshots(),
                 builder: (context, snapshot) {
@@ -53,29 +56,51 @@ class _ChatPageState extends State<ChatPage> {
                   }
                 },
               ),
-            ),
+            )),
 
-            //Text Field
+            //Bottom Container
             Container(
+              color: Color(0xFFFAFAFA),
               child: Row(
                 children: <Widget>[
                   Expanded(
+
+
+                    //TextField
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(90),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black26,
+                              offset: const Offset(0, 2.0),
+                              blurRadius: 5.0,
+                              spreadRadius: 1.0,
+                            ),
+                          ]),
+                      height: 50,
+                      margin: EdgeInsets.all(10),
                       child: TextField(
                         decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(90))),
+                                  BorderRadius.all(Radius.circular(90.0)),
+                              borderSide: BorderSide.none),
+                          contentPadding: EdgeInsets.all(10),
+                          filled: true,
+                          fillColor: Color(0xFFFFFFFF),
                         ),
                         controller: messageController,
                       ),
                     ),
                   ),
+
+
+                  //Send Icon
                   Container(
+                    padding: EdgeInsets.only(right: 10),
                     child: IconButton(
+                      color: Color(0xFF00adb5),
                       icon: Icon(Icons.send),
                       onPressed: () async {
                         if (messageController.text.trim().length > 0) {
